@@ -153,7 +153,6 @@ export class TodoMcpServer {
   async listTodos(params: any, headers: any): Promise<CallToolResult> {
     try {
       const user = this.extractUserInfo(headers);
-      console.log("user", user);
       const filters = TodoFilterSchema.parse(params);
 
       const { todos, total } = await this.database.getAllTodos(

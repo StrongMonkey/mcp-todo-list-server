@@ -114,7 +114,6 @@ const app = express();
 app.use(express.json());
 
 app.post("/mcp", async (req: Request, res: Response) => {
-  console.log("req.headers", req.headers);
   const server = await getServer(req.headers);
   try {
     const transport: StreamableHTTPServerTransport =
